@@ -11,15 +11,23 @@
     "workbench.editor.labelFormat": "short",
     "editor.tabSize": 2,
     "explorer.compactFolders": false,
-  
+
+    "code-runner.clearPreviousOutput": false,
+    "code-runner.runInTerminal": true,
+    "code-runner.ignoreSelection": true,
+    "code-runner.executorMap": {
+      "typescript": "cls ; npx tsx",
+    },
+
+
     // 🛠 Formatação e Lint
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-  
+
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit"
     },
-  
+
     "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
