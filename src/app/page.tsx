@@ -1,11 +1,19 @@
+import PostsList from "@/components/PostsList";
 import SpinLoader from "@/components/Spinloader";
+import { Suspense } from "react";
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <>
-      {/* Aqui para continuarmos utilizando auto-complete do tailwindcss podemos utilizar CLSX ou mudar a propriedade
-      para o nome 'className' */}
-      <SpinLoader containerClasses='min-h-40'/>
+      <header className="font-bold text-xl text-center py-8 ">
+        <h1>HEADER</h1>
+      </header>
+      <Suspense fallback={<SpinLoader />}>
+        <PostsList />
+      </Suspense>
+      <footer className="font-bold text-xl text-center py-8 ">
+        <h1>FOOTER</h1>
+      </footer>
     </>
   );
 }
