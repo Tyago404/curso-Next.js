@@ -1,4 +1,5 @@
 import { Container } from "@/components/container";
+import Header from "@/components/Header";
 import PostsList from "@/components/PostsList";
 import SpinLoader from "@/components/Spinloader";
 import { Suspense } from "react";
@@ -6,17 +7,7 @@ import { Suspense } from "react";
 export default async function HomePage() {
   return (
     <Container>
-      <header>
-        <h1 className="font-bold text-xl text-center py-8">HEADER</h1>
-        <p className="text-justify">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure id
-          eaque sapiente sed labore sit doloremque voluptatibus esse quisquam
-          velit nam asperiores sequi magnam rem saepe quod nulla, quas sint!
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure id
-          eaque sapiente sed labore sit doloremque voluptatibus esse quisquam
-          velit nam asperiores sequi magnam rem saepe quod nulla, quas sint!
-        </p>
-      </header>
+      <Header />
 
       <Suspense fallback={<SpinLoader />}>
         <PostsList />
