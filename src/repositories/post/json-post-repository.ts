@@ -28,19 +28,13 @@ export class JsonPostRepository implements PostRepository {
 
       return post
     }
+
+    async findByAuthor(author: string): Promise<PostModel> {
+      const posts = await this.findAll();
+      const post = posts.find(post => post.author === author);
+      if(!post) throw new Error('Autor não encontrado!')
+
+      return post
+    }
 }
-
-export const postRepository: PostRepository = new JsonPostRepository();
-
-//FindAll
-(async ()=>{
-  const posts = await postRepository.findAll();
-    posts.forEach(post => console.log(post.id))
-});
-
-//FindById
-(async ()=>{
-  const post = await postRepository.findById('afa086e4-53e4-492d-acf2-7c2966d83fcd');
-  console.log(post)
-})()
 
