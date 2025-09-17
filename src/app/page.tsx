@@ -1,28 +1,39 @@
+import { Container } from "@/components/Container";
 import { PostsList } from "@/components/PostsList";
 import { SpinLoader } from "@/components/SpinLoader";
-import clsx from "clsx";
 import { Suspense } from "react";
 
 export default async function HomePage() {
   return (
-    <div
-      className={clsx(
-        "text-slate-900 bg-slate-100",
-        "min-h-screen",
-        "dark:text-slate-100 dark:bg-slate-900"
-      )}
-    >
-      <header>
-        <h1 className="text-6xl font-bold text-center py-8">HEADER</h1>
-      </header>
+  <Container>
+        <header>
+          <h1 className="text-6xl font-bold py-8">HEADER</h1>
+        </header>
 
-      <Suspense fallback={<SpinLoader />}>
-        <PostsList />
-      </Suspense>
+        <p className="text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+          quaerat debitis itaque culpa. Reprehenderit fuga quidem aspernatur
+          natus dignissimos quis nostrum sit explicabo similique fugiat, iure
+          cupiditate optio autem voluptates?
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+          quaerat debitis itaque culpa. Reprehenderit fuga quidem aspernatur
+          natus dignissimos quis nostrum sit explicabo similique fugiat, iure
+          cupiditate optio autem voluptates?
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+          quaerat debitis itaque culpa. Reprehenderit fuga quidem aspernatur
+          natus dignissimos quis nostrum sit explicabo similique fugiat, iure
+          cupiditate optio autem voluptates?
+        </p>
 
-      <footer>
-        <h1 className="text-6xl font-bold text-center py-8">FOOTER</h1>
-      </footer>
-    </div>
+        <Suspense fallback={<SpinLoader />}>
+          <PostsList />
+        </Suspense>
+
+        <footer>
+          <h1 className="text-6xl font-bold py-8">FOOTER</h1>
+        </footer>
+
+  </Container>
+
   );
 }
