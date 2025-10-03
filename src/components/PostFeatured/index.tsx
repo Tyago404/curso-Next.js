@@ -26,8 +26,8 @@ export function PostFeatured() {
         >
           20/04/2025 10:00
         </time>
-        <PostHeading url={postLink} as="h1">
-          Lorem ipsum dolor sit amet, consectetur adipisicing .
+        <PostHeading url={postLink} as="h2">
+          Lorem ipsum dolor sit amet, consectetur adipisicing.
         </PostHeading>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
         sequi facilis incidunt doloremque impedit odit repellendus cum minima,
