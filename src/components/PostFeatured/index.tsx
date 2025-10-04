@@ -1,11 +1,13 @@
 import { PostCoverImage } from "../PostCoverImage";
-import { PostHeading } from "../PostHeading";
 import { PostSummary } from "../PostSummary";
+import { findAllPublicPosts } from "@/lib/post/queries";
 
-export function PostFeatured() {
-  const slug = "any";
-  const postLink = `/post/${slug}`;
+export async function PostFeatured() {
 
+  const posts = await findAllPublicPosts();
+  const post = posts[0]
+
+  const postLink = `/post/${post.slug}`
   return (
     <section className="grid grid-cols-1 gap-8 mb-16 sm:grid-cols-2 group">
       <PostCoverImage
@@ -15,20 +17,20 @@ export function PostFeatured() {
         imageProps={{
           width: 1200,
           height: 720,
-          src: "/images/bryen_9.png",
-          alt: "Alt da imagem",
+          src: post.coverImageUrl,
+          alt: post.title,
           priority: true,
         }}
       />
       <PostSummary
         postHeading="h1"
         postLink={postLink}
-        createdAt={"2025-04-08T00:24:38.616Z"}
+        createdAt={post.createdAt}
         title={
-          "This will create the dillinger image and pull in the necessary dependencies."
+          post.title
         }
         excerpt={
-          "Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,"
+          post.excerpt
         }
       />
     </section>

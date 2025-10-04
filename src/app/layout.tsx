@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Container } from "@/components/Container";
+import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "The Blog",
@@ -14,7 +16,13 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="pt-br">
       <body>
-        {children}
+        <Container>
+          <Header />
+          {children}
+          <footer>
+            <h1 className="text-6xl font-bold py-8">FOOTER</h1>
+          </footer>
+        </Container>
       </body>
     </html>
   );
