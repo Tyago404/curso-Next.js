@@ -4,8 +4,12 @@ import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "The Blog",
+  title:{
+    default: 'The blog',
+    template: '%s | The Blog'
+  },
   description: "Descrição da Page",
+
 };
 
 type RootLayoutProps = {
