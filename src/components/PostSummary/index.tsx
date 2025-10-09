@@ -21,7 +21,7 @@ export function PostSummary({
       <time
         className="text-slate-600 block text-sm/tight"
         dateTime={createdAt}
-        title={formatDistanceToNow(createdAt)}
+        title={formatDateTime(createdAt)}
       >
         {formatDateTime(createdAt)}
       </time>
