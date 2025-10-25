@@ -21,6 +21,7 @@ export async function generateMetadata({
 }
 
 export default async function PostSlugPage({ params }: PostSlugPageProps) {
+
   const { slug } = await params;
   const post = await findPostBySlugCached(slug);
 
