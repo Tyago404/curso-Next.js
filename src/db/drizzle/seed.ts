@@ -10,7 +10,7 @@ import { postsTable } from "./schemas";
     await drizzleDb.delete(postsTable); //cuidado!
     await drizzleDb.insert(postsTable).values(posts);
 
-    console.log(`${posts.length} posts foram salvos na base de dados`)
+    console.log(`${posts.length} posts foram salvos na base de dados`);
   } catch (e) {
     console.log(`Ocorreu o erro: ${e}`);
   }
